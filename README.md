@@ -2,6 +2,7 @@
 
 When you want to do things in batches, use a stream
 
+```
 batches(fahrerIds, 999).forEach(longs -> {
        // Do action here
        fahrerSpracheList.addAll(someMethodGoesHereAndDoesThings(longListOfLongsOrAnythingReally));
@@ -18,3 +19,4 @@ public static <T> Stream<List<T>> batches(List<T> source, int length) {
     return IntStream.range(0, fullChunks + 1).mapToObj(
             n -> source.subList(n * length, n == fullChunks ? size : (n + 1) * length));
 }
+```
